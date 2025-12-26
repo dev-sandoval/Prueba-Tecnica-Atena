@@ -1,4 +1,10 @@
-﻿namespace UserManagement.Application.Users.Commands.CreateUser
+﻿using MediatR;
+using Microsoft.EntityFrameworkCore;
+using UserManagement.Application.Common;
+using UserManagement.Application.Interfaces;
+using UserManagement.Domain.Entities;
+
+namespace UserManagement.Application.Users.Commands.CreateUser
 {
     public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, Result<Guid>>
     {
