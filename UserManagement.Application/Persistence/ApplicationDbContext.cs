@@ -1,0 +1,20 @@
+﻿using Microsoft.EntityFrameworkCore;
+using UserManagement.Application.Interfaces;
+using UserManagement.Domain.Entities;
+
+namespace UserManagement.Application.Persistence
+{
+    public class ApplicationDbContext : DbContext, IApplicationDbContext
+    {
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+            : base(options) { }
+
+        public DbSet<User> Users { get; set; }
+
+        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+        {
+            return base.SaveChangesAsync(cancellationToken);
+        }
+
+    }
+}
