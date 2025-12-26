@@ -1,0 +1,22 @@
+<mat-toolbar
+  color="primary"
+  class="px-4 py-2 sticky top-0 z-40 flex justify-start gap-5"
+>
+  <div class="flex items-center gap-2">
+    <mat-icon fontIcon="people"></mat-icon>
+    <span class="text-xl font-bold">{{ title }}</span>
+  </div>
+  <nav class="flex items-center">
+    <button
+      mat-raised-button
+      routerLink="/users"
+      routerLinkActive="active"
+      aria-label="Ir a Inicio"
+    >
+      <mat-icon fontIcon="home"></mat-icon>
+      <span>Inicio</span>
+    </button>
+  </nav>
+</mat-toolbar>
+
+<router-outlet></router-outlet>
