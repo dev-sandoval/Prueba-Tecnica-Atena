@@ -1,4 +1,8 @@
-﻿namespace UserManagement.Infrastructure.Persistence
+﻿using Microsoft.EntityFrameworkCore;
+using UserManagement.Application.Interfaces;
+using UserManagement.Domain.Entities;
+
+namespace UserManagement.Infrastructure.Persistence
 {
     public class ApplicationDbContext : DbContext, IApplicationDbContext
     {

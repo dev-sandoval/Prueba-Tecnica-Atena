@@ -1,4 +1,8 @@
-﻿namespace UserManagement.Infrastructure.Persistence.Configurations
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using UserManagement.Domain.Entities;
+
+namespace UserManagement.Infrastructure.Persistence.Configurations
 {
     public class UserConfiguration : IEntityTypeConfiguration<User>
     {
