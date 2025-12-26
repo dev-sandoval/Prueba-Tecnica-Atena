@@ -24,16 +24,16 @@ namespace UserManagement.API.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<ApiResponse<Guid>>> Create([FromBody] CreateUserCommand command)
+        public async Task<ActionResult<ApiResponse<Guid?>>> Create([FromBody] CreateUserCommand command)
         {
             var result = await mediator.Send(command);
 
             if (!result.IsSuccess)
             {
-                return BadRequest(ApiResponse<Guid>.Fail(result.Error));
+                return BadRequest(ApiResponse<Guid?>.Fail(result.Error));
             }
 
-            return Ok(ApiResponse<Guid>.Ok(result.Value, "Usuario creado exitosamente"));
+            return Ok(ApiResponse<Guid?>.Ok(result.Value, "Usuario creado exitosamente"));
         }
     }
 }

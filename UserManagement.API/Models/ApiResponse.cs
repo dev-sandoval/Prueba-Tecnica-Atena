@@ -23,7 +23,7 @@ public class ApiResponse<T>
         return new ApiResponse<T>
         {
             Success = false,
-            Data = default,
+            Data = default(T?),
             Message = errorMessage
         };
     }
